@@ -7,10 +7,10 @@ class Sea {
   
   Sea() {
     x = width/4;
-    y = height/2;
+    y = height/8*5.5;
     z = 0;
     w = width/2;
-    h = height;
+    h = height/4*3;
   }
   
   void show() {

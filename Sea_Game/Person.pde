@@ -6,6 +6,7 @@ class Person {
   float vy = 0;
   float vz = 0;
   float r;
+  boolean intersecting;
   
   Person() {
     x = width-50;
@@ -16,6 +17,10 @@ class Person {
   
   void jump(float power) {
     vz += power;
+  }
+  
+  void move(float steps) {
+    vy = steps;
   }
   
   void fall() {
@@ -33,7 +38,16 @@ class Person {
   }
   
   boolean jumpedInto(Wave w) {
-    if (x > w.x - w.w/2 && x < w.x + w.w/2 && z > w.z - vz && z < w.z + 2) {
+    if ((x > w.x - w.w/2 && x < w.x + w.w/2) &&
+        (y > w.y - w.h/2 && y < w.y + w.h/2) &&
+        (z > w.z - 2 && z < w.z + 2)) {
+      return true;
+    }
+    return false;
+  }
+  
+  boolean intersects(Wave w) {
+    if (x > w.x - w.w/2 && x < w.x + w.w/2) {
       return true;
     }
     return false;
@@ -41,7 +55,11 @@ class Person {
   
   void show() {
     stroke(0);
-    fill(255, 200, 200);
+    //if (intersecting) {
+    //  fill(128, 128, 255);
+    //} else {
+      fill(255, 200, 200);
+    //}
     ellipse(x, y, r*2+z, r*2+z);
   }
 }

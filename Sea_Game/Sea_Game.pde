@@ -35,6 +35,11 @@ void draw() {
     if (person.jumpedInto(wave)) {
       ok = false;
     }
+    if (person.intersects(wave)) {
+      person.intersecting = true;
+    } else {
+      person.intersecting = false;
+    }
   }
   if (!ok) {
     noLoop();
@@ -46,4 +51,18 @@ void draw() {
 
 void mousePressed() {
   person.jump(2.5);
+}
+
+void keyReleased() {
+  person.move(0);
+}
+
+void keyPressed() {
+  if (key == 'u') {
+    person.move(-1);
+  } else if (key == 'd') {
+    person.move(1);
+  } else if (key == 'j') {
+    person.jump(2.5);
+  }
 }

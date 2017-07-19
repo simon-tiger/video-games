@@ -10,10 +10,10 @@ class Wave {
   
   Wave() {
     x = width/16;
-    y = height/2;
+    y = height/8*5.5;
     z = 0;
     w = width/8;
-    h = height;
+    h = height/4*3;
   }
   
   void update() {
@@ -34,6 +34,6 @@ class Wave {
     stroke(0);
     fill(200, 235, 255);
     rectMode(CENTER);
-    rect(x, y-1, w+z, h+z+2);
+    rect(x, y-1, w+z, h+z+1);
   }
 }
