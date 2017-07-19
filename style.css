@@ -1,0 +1,30 @@
+html, body {
+  font-family: Helvetica, sans-serif;
+}
+
+h1, h2 {
+  border-bottom: 1px solid #ccc;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+}
+
+.line {
+  display: inline-block;
+  width: 100%;
+  border-top: 1px solid #ccc;
+}
+
+a:link {
+  color: #0645ad;
+}
+
+a:visited {
+  color: #0b0080;
+}
+
+table tr td {
+  border: 1px solid #555;
+  background: #ccc;
+}
